@@ -50,7 +50,7 @@ class Model {
         let z = evt.pickInfo.pickedPoint._z;
         console.log(x, y, z);
 
-        this.moveCam(0, {x: x < 0 && x - 100 || x + 100, y: y < 0 && y - 100 || y + 100, z: z < 0 && z - 100 || z + 100});
+        this.moveCam({x: x < 0 && x - 80 || x + 80, y: y < 0 && y - 80 || y + 80, z: z < 0 && z - 80 || z + 80});
       }
     })
 
@@ -67,15 +67,15 @@ class Model {
 
     BABYLON.SceneLoader.ImportMesh("", "./model1/model2/", "gift_giving.gltf", this.scene, (meshes, particleSystems, skeletons, animationGroups) => {
 
-      setTimeout(() => {
-        this.moveCameraRight(toCel(this.camera.alpha), 0, 0, timeToFrame(1000));
-      }, 2000);
-      setTimeout(() => {
-        this.moveCameraRight(toCel(this.camera.alpha), 0, 0, timeToFrame(1000));
-      }, 5000);
-      setTimeout(() => {
-        this.moveCameraRight(toCel(this.camera.alpha), 0, 0, timeToFrame(1000));
-      }, 8000)
+      // setTimeout(() => {
+      //   this.moveCameraRight(toCel(this.camera.alpha), 0, 0, timeToFrame(1000));
+      // }, 2000);
+      // setTimeout(() => {
+      //   this.moveCameraRight(toCel(this.camera.alpha), 0, 0, timeToFrame(1000));
+      // }, 5000);
+      // setTimeout(() => {
+      //   this.moveCameraRight(toCel(this.camera.alpha), 0, 0, timeToFrame(1000));
+      // }, 8000)
     });
 
     this.scene.createDefaultEnvironment();
@@ -111,14 +111,14 @@ class Model {
     }, FRAME)
   }
 
-  moveCam = (f, camPos) => {
+  moveCam = (camPos) => {
     setTimeout(() => {
-      if (f < 10) {
+      if (Math.abs(this.camera.position.x - camPos.x) > 5) {
+        console.log(camPos.x, this.camera.position.x)
         this.camera.position = BABYLON.Vector3.Lerp(this.camera.position, new BABYLON.Vector3(camPos.x, camPos.y, camPos.z), 0.1);
-        f++;
-        this.moveCam(f, camPos);
+        this.moveCam(camPos);
       } else {
-        f = 0;
+        console.log('stop!')
       }
     }, 15)
   }
