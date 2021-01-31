@@ -21,30 +21,29 @@
 </head>
 
 <body>
-  <div id='input'>
-    <input id='x' type="number">
-    <input id='y' type="number">
-    <input id='z' type="number">
-  </div>
-  <div class="control-container">
-    <button class='control-btn' id='rotate-left'>
-      <i class="fas fa-chevron-left"></i>
-    </button>
-    <button class='control-btn' id='zoom-on'>
-      <i class="fas fa-chevron-up"></i>
-    </button>
-    <button class='control-btn' id='rotate-right'>
-      <i class="fas fa-chevron-right"></i>
-    </button>
-  </div>
-  <div  id='loading-icon' class="loading-container">
-    <div class="spinner-grow text-light" id='loading-icon' role="status">
-      <span class="visually"></span>
+  <div id='container'>
+    <div class="control-container">
+      <button class='control-btn' id='rotate-left'>
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class='control-btn' id='zoom-on'>
+        <i class="fas fa-chevron-up"></i>
+      </button>
+      <button class='control-btn' id='rotate-right'>
+        <i class="fas fa-chevron-right"></i>
+      </button>
     </div>
-    <p class='loading-text'>Loading...</p>
+    <div  id='loading-icon' class="loading-container">
+      <div class="spinner-grow text-light" id='loading-icon' role="status">
+        <span class="visually"></span>
+      </div>
+      <p class='loading-text'>Loading...</p>
+    </div>
+    <canvas id='renderer'></canvas>
   </div>
-  <script src='./script.js'></script>
+  <script src='./constants.js'></script>
   <script src='./index.js'></script>
+  <script src='./script.js'></script>
 </body>
 
 </html>

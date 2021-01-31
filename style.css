@@ -1,3 +1,6 @@
+body {
+  overflow: hidden;
+}
 .loading-container {
   position: fixed;
   top: 0;
@@ -5,12 +8,10 @@
   left: 0;
   bottom: 0;
   z-index: 100;
-
   display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   background: black;
 }
 
@@ -30,7 +31,7 @@
   display: flex;
   background: transparent;
   align-items: center;
-  justify-content: center;  
+  justify-content: center;
   padding-bottom: 16px;
 }
 
@@ -53,4 +54,45 @@
 
 input {
   width: 50px;
+}
+
+.dot-container {
+  position: fixed;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 10px 10px #ffffffb4,
+}
+
+.dot {
+  width: 10px;
+  border-radius: 50%;
+  height: 10px;
+  background-image: radial-gradient(rgb(253, 253, 253), rgba(255, 255, 0, 0), rgb(255, 255, 255));
+}
+
+.dot-container:hover .dot {
+  background-image: radial-gradient(rgb(70, 148, 250), rgba(255, 255, 0, 0), rgb(103, 118, 255));
+}
+
+.dot-container:hover span {
+  background: rgb(70, 148, 250)
+}
+
+.dot-container span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+}
+
+.hidden {
+  display: none !important;
 }
