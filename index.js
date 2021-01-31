@@ -20,6 +20,8 @@ class Model {
     this.zoom = false;
 
     this.roomIndex = 0;
+    this.focusIndex = 1;
+
     this.currentRoom = vertices[this.roomIndex];
 
     this.cameraTarget = {
@@ -84,6 +86,7 @@ class Model {
         console.log(this.camera.target);
         this.moveCam(vertices[0].focus2.vertice);
         this.hideDotsZoom(0);
+        this.displayDotsProduct(0, 1);
       });
 
       document.getElementById('room1_zoom_2').addEventListener('click', () => {
@@ -92,6 +95,7 @@ class Model {
         console.log(this.camera.target);
         this.moveCam(vertices[0].focus1.vertice);
         this.hideDotsZoom(0);
+        this.displayDotsProduct(0, 2);
       });
 
       document.getElementById('room3_zoom_1').addEventListener('click', () => {
@@ -100,6 +104,7 @@ class Model {
         console.log(this.camera.target);
         this.moveCam(vertices[2].focus1.vertice);
         this.hideDotsZoom(2);
+        this.displayDotsProduct(2, 1);
       });
 
       document.getElementById('room2_zoom_1').addEventListener('click', () => {
@@ -108,6 +113,7 @@ class Model {
         console.log(this.camera.target);
         this.moveCam(vertices[1].focus1.vertice);
         this.hideDotsZoom(1);
+        this.displayDotsProduct(1, 1);
       });
 
       document.getElementById('room2_zoom_2').addEventListener('click', () => {
@@ -116,6 +122,7 @@ class Model {
         console.log(this.camera.target);
         this.moveCam(vertices[1].focus2.vertice);
         this.hideDotsZoom(1);
+        this.displayDotsProduct(1, 2);
       });
 
       meshes.forEach(item => {
@@ -146,6 +153,7 @@ class Model {
       // }, 8000);\
 
       rightBtn.addEventListener('click', () => {
+        this.hideDotsProduct(this.roomIndex);
         if (!isClicked) {
           this.roomIndex = this.roomIndex < 2 ? this.roomIndex + 1 : 0;
           this.hideDotsZoom(0);
@@ -159,6 +167,7 @@ class Model {
       });
 
       leftBtn.addEventListener('click', () => {
+        this.hideDotsProduct(this.roomIndex);
         if (!isClicked) {
           this.roomIndex = this.roomIndex > 0 ? this.roomIndex - 1 : 2;
           this.hideDotsZoom(0);
@@ -177,8 +186,8 @@ class Model {
         this.zoom = false;
         this.camera.target = new BABYLON.Vector3(0, 0, 0);
         this.moveCam(vertices[this.roomIndex].init);
-
-        this.displayDotsZoom(this.roomIndex)
+        this.hideDotsProduct(this.roomIndex);
+        this.displayDotsZoom(this.roomIndex);
         // this.camera.target = new BABYLON.Vector3(vertices[2].focus1.target.x, vertices[2].focus1.target.y, vertices[2].focus1.target.z)
         // console.log(this.camera.target);
         // this.moveCam(vertices[2].focus1.vertice);
@@ -257,7 +266,7 @@ class Model {
     }, 15)
   }
 
-  hideDotsZoom = (room) => {
+  hideDotsZoom = (room, focus) => {
     if (room === 0) {
       room1_zoom.forEach(item => {
         item.classList.add('hidden');
@@ -290,6 +299,58 @@ class Model {
     return 0
   }
 
+  displayDotsProduct = (room, focus) => {
+    if (room === 0) {
+      if (focus === 1) {
+        room1_product_1.forEach(item => {
+          item.classList.remove('hidden');
+        })
+      } else if (focus === 2) {
+        room1_product_2.forEach(item => {
+          item.classList.remove('hidden');
+        })
+      }
+    } else if (room === 1) {
+      if (focus === 1) {
+        room2_product_1.forEach(item => {
+          item.classList.remove('hidden');
+        })
+      } else if (focus === 2) {
+        room2_product_2.forEach(item => {
+          item.classList.remove('hidden');
+        })
+      }
+    } else if (room === 2) {
+      if (focus === 1) {
+        room3_product_1.forEach(item => {
+          item.classList.remove('hidden');
+        })
+      }
+    }
+    return 0
+  }
+
+  hideDotsProduct = (room, focus) => {
+    if (room === 0) {
+      room1_product_1.forEach(item => {
+        item.classList.add('hidden');
+      })
+      room1_product_2.forEach(item => {
+        item.classList.add('hidden');
+      })
+    } else if (room === 1) {
+      room2_product_1.forEach(item => {
+        item.classList.add('hidden');
+      })
+      room2_product_2.forEach(item => {
+        item.classList.add('hidden');
+      })
+    } else if (room === 2) {
+      room3_product_1.forEach(item => {
+        item.classList.add('hidden');
+      })
+    }
+  }
 }
 
 var myModel = new Model('hhh');
