@@ -29,8 +29,6 @@ const createZoomDots = () => {
   })
 }
 
-createZoomDots();
-
 const room1_zoom = Array.from(document.getElementsByClassName('room1_zoom'));
 const room2_zoom = Array.from(document.getElementsByClassName('room2_zoom'));
 const room3_zoom = Array.from(document.getElementsByClassName('room3_zoom'));
