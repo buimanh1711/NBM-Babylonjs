@@ -125,6 +125,41 @@ class Model {
         this.displayDotsProduct(1, 2);
       });
 
+      room1_product_1.forEach((item, index) => {
+        item.addEventListener('click', () => {
+          console.log('clcike')
+          this.openPop(vertices[0].dots.products[0][index].info)
+        })
+      });
+
+      room1_product_2.forEach((item, index) => {
+        item.addEventListener('click', () => {
+          console.log('clcike')
+          this.openPop(vertices[0].dots.products[1][index].info)
+        })
+      });
+
+      room2_product_1.forEach((item, index) => {
+        item.addEventListener('click', () => {
+          console.log('clcike')
+          this.openPop(vertices[1].dots.products[0][index].info)
+        })
+      });
+
+      room2_product_2.forEach((item, index) => {
+        item.addEventListener('click', () => {
+          console.log('clcike')
+          this.openPop(vertices[1].dots.products[1][index].info)
+        })
+      });
+
+      room3_product_1.forEach((item, index) => {
+        item.addEventListener('click', () => {
+          console.log('clcike')
+          this.openPop(vertices[2].dots.products[0][index].info)
+        });
+      });
+
       meshes.forEach(item => {
         if (item.name === 'ventole') {
           item.rotationQuaternion = null;
@@ -350,6 +385,18 @@ class Model {
         item.classList.add('hidden');
       })
     }
+  }
+
+  openPop(product) {
+    console.log('run')
+    popup.classList.remove('hidden');
+    let content = 
+    `
+      <h1>${product.name}</h1>
+      <h1>${product.price}<h1>
+    `
+    popupCt.innerHTML = content;
+
   }
 }
 

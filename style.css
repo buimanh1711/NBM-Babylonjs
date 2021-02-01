@@ -93,6 +93,35 @@ input {
   border-radius: 50%;
 }
 
+
+
+.popup {
+  z-index: 10000;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+}
+
 .hidden {
   display: none !important;
+}
+
+.back-btn {
+  cursor: pointer;
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 50%;
 }

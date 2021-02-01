@@ -3,8 +3,8 @@ const scrHEIGHT = window.innerHeight;
 const vertices = [
   {
     dots: {
-      zoom: [{ x: 727/scrWIDTH, y: 279/scrHEIGHT }, { x: 528/scrWIDTH, y: 289/scrHEIGHT }],
-      products: [[{ x: 724/scrWIDTH, y: 375/scrHEIGHT }, { x: 621/scrWIDTH, y: 317/scrHEIGHT }], [{ x: 581/scrWIDTH, y: 362/scrHEIGHT }]]
+      zoom: [{ x: 727 / scrWIDTH, y: 279 / scrHEIGHT }, { x: 528 / scrWIDTH, y: 289 / scrHEIGHT }],
+      products: [[{ x: 724 / scrWIDTH, y: 375 / scrHEIGHT, info: { name: 'Manh bui', price: 1000 } }, { x: 621 / scrWIDTH, y: 317 / scrHEIGHT, info: { name: 'Manh bui', price: 1000 } }], [{ x: 581 / scrWIDTH, y: 362 / scrHEIGHT, info: { name: 'Manh bui', price: 1000 } }]]
     },
     isActive: true,
     init: {
@@ -41,8 +41,8 @@ const vertices = [
   },
   {
     dots: {
-      zoom: [{ x: 706/scrWIDTH, y: 457/scrHEIGHT }, { x: 485/scrWIDTH, y: 295/scrHEIGHT }],
-      products: [[{ x: 831/scrWIDTH, y: 370/scrHEIGHT }, { x: 649/scrWIDTH, y: 229/scrHEIGHT }], [{ x: 720/scrWIDTH, y: 226/scrHEIGHT }]]
+      zoom: [{ x: 706 / scrWIDTH, y: 457 / scrHEIGHT }, { x: 485 / scrWIDTH, y: 295 / scrHEIGHT }],
+      products: [[{ x: 831 / scrWIDTH, y: 370 / scrHEIGHT, info: { name: 'Manh bui', price: 1000 } }, { x: 649 / scrWIDTH, y: 229 / scrHEIGHT, info: { name: 'Manh bui', price: 1000 } }], [{ x: 720 / scrWIDTH, y: 226 / scrHEIGHT, info: { name: 'Manh bui', price: 1000 } }]]
     },
     isActive: false,
     init: {
@@ -79,8 +79,8 @@ const vertices = [
   },
   {
     dots: {
-      zoom: [{ x: 705/scrWIDTH, y: 264/scrHEIGHT }],
-      products: [[{ x: 911/scrWIDTH, y: 238/scrHEIGHT }, { x: 486/scrWIDTH, y: 238/scrHEIGHT }]]
+      zoom: [{ x: 705 / scrWIDTH, y: 264 / scrHEIGHT }],
+      products: [[{ x: 911 / scrWIDTH, y: 238 / scrHEIGHT, info: { name: 'Manh bui', price: 1000 } }, { x: 486 / scrWIDTH, y: 238 / scrHEIGHT, info: { name: 'Manh bui', price: 1000 } }]]
     },
     isActive: false,
     init: {

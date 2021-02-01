@@ -43,6 +43,13 @@ const room2_product_2 = Array.from(document.getElementsByClassName('room2_produc
 
 const room3_product_1 = Array.from(document.getElementsByClassName('room3_product_1'));
 
+const popup = document.getElementById('popup');
+const popupCls = document.getElementById('popup-btn');
+const popupCt = document.getElementById('popup-content');
+
+popupCls.addEventListener('click', () => {
+  popup.classList.add('hidden')
+})
 
 var dotSize = 1;
 var dots = Array.from(document.getElementsByClassName('dot'));
